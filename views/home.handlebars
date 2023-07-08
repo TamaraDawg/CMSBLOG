@@ -1,0 +1,32 @@
+{{!-- Home Page --}}
+{{#extend 'layouts/main'}}
+  {{#content 'body'}}
+    <h1>Welcome to the Blog Site!</h1>
+    {{#if posts}}
+      <ul>
+        {{#each posts}}
+          <li>
+            <h2>{{this.title}}</h2>
+            <p>Posted by: {{this.user.username}}</p>
+            <p>Date: {{this.createdAt}}</p>
+            {{#if this.comments.length}}
+              <h3>Comments:</h3>
+              <ul>
+                {{#each this.comments}}
+                 <li>
+                    <p>{{this.content}}</p>
+                    <p>By: {{this.user.username}}</p>
+                    <p>Date: {{this.createdAt}}</p>
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+            <a href="/posts/{{this.id}}">View Post</a>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No posts found.</p>
+    {{/if}}
+  {{/content}}
+{{/extend}}
