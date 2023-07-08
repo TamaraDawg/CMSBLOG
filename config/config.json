@@ -1,0 +1,16 @@
+{
+    "development": {
+      "username": "your_mysql_username",
+      "password": "your_mysql_password",
+      "database": "blog_db",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+    "test": {
+      ...
+    },
+    "production": {
+      ...
+    }
+  }
+  
